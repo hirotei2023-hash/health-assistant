@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MainLayout from '@/layouts/MainLayout'
+import Dashboard from '@/pages/Dashboard'
 import HealthProfile from '@/pages/HealthProfile'
 import Medications from '@/pages/Medications'
 import MedicationDetail from '@/pages/MedicationDetail'
@@ -15,7 +16,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
-          <Route index element={<div className="text-2xl font-bold">欢迎使用健康助手</div>} />
+          <Route index element={<Dashboard />} />
           <Route path="health-profile" element={<HealthProfile />} />
           <Route path="medications" element={<Medications />} />
           <Route path="medications/:id" element={<MedicationDetail />} />
