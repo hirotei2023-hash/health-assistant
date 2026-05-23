@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MainLayout from '@/layouts/MainLayout'
 import HealthProfile from '@/pages/HealthProfile'
+import Medications from '@/pages/Medications'
+import MedicationDetail from '@/pages/MedicationDetail'
 
 function App() {
   return (
@@ -9,8 +11,8 @@ function App() {
         <Route element={<MainLayout />}>
           <Route index element={<div className="text-2xl font-bold">欢迎使用健康助手</div>} />
           <Route path="health-profile" element={<HealthProfile />} />
-          <Route path="medications" element={<div>用药管理</div>} />
-          <Route path="medications/:id" element={<div>药品详情</div>} />
+          <Route path="medications" element={<Medications />} />
+          <Route path="medications/:id" element={<MedicationDetail />} />
           <Route path="visits" element={<div>就诊记录</div>} />
           <Route path="visits/:id" element={<div>就诊详情</div>} />
           <Route path="reports" element={<div>体检报告</div>} />
