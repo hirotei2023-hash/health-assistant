@@ -7,6 +7,8 @@ import Visits from '@/pages/Visits'
 import VisitDetail from '@/pages/VisitDetail'
 import Reports from '@/pages/Reports'
 import ReportDetail from '@/pages/ReportDetail'
+import Symptoms from '@/pages/Symptoms'
+import SymptomDetail from '@/pages/SymptomDetail'
 
 function App() {
   return (
@@ -21,8 +23,8 @@ function App() {
           <Route path="visits/:id" element={<VisitDetail />} />
           <Route path="reports" element={<Reports />} />
           <Route path="reports/:id" element={<ReportDetail />} />
-          <Route path="symptoms" element={<div>症状日记</div>} />
-          <Route path="symptoms/:id" element={<div>症状详情</div>} />
+          <Route path="symptoms" element={<Symptoms />} />
+          <Route path="symptoms/:id" element={<SymptomDetail />} />
           <Route path="share" element={<div>分享报告</div>} />
           <Route path="settings" element={<div>设置</div>} />
           <Route path="*" element={<div className="flex items-center justify-center min-h-[50vh] text-muted-foreground text-lg">页面未找到</div>} />
