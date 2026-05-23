@@ -3,6 +3,8 @@ import MainLayout from '@/layouts/MainLayout'
 import HealthProfile from '@/pages/HealthProfile'
 import Medications from '@/pages/Medications'
 import MedicationDetail from '@/pages/MedicationDetail'
+import Visits from '@/pages/Visits'
+import VisitDetail from '@/pages/VisitDetail'
 
 function App() {
   return (
@@ -13,8 +15,8 @@ function App() {
           <Route path="health-profile" element={<HealthProfile />} />
           <Route path="medications" element={<Medications />} />
           <Route path="medications/:id" element={<MedicationDetail />} />
-          <Route path="visits" element={<div>就诊记录</div>} />
-          <Route path="visits/:id" element={<div>就诊详情</div>} />
+          <Route path="visits" element={<Visits />} />
+          <Route path="visits/:id" element={<VisitDetail />} />
           <Route path="reports" element={<div>体检报告</div>} />
           <Route path="reports/:id" element={<div>报告详情</div>} />
           <Route path="symptoms" element={<div>症状日记</div>} />
