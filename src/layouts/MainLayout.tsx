@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Outlet, NavLink, useLocation } from 'react-router-dom'
 import {
   SidebarProvider,
@@ -26,10 +27,10 @@ const menuItems = [
   { to: '/settings', label: '设置', icon: '⚙️' },
 ]
 
-export default function MainLayout() {
+function SidebarNav() {
   const location = useLocation()
 
-  const SidebarNav = () => (
+  return (
     <SidebarContent>
       <SidebarGroup>
         <SidebarGroupContent>
@@ -37,7 +38,7 @@ export default function MainLayout() {
             {menuItems.map((item) => (
               <SidebarMenuItem key={item.to}>
                 <SidebarMenuButton asChild isActive={location.pathname === item.to}>
-                  <NavLink to={item.to}>
+                  <NavLink to={item.to} end={item.to === '/'}>
                     <span>{item.icon}</span>
                     <span>{item.label}</span>
                   </NavLink>
@@ -49,6 +50,15 @@ export default function MainLayout() {
       </SidebarGroup>
     </SidebarContent>
   )
+}
+
+export default function MainLayout() {
+  const location = useLocation()
+  const [mobileOpen, setMobileOpen] = useState(false)
+
+  useEffect(() => {
+    setMobileOpen(false)
+  }, [location.pathname])
 
   return (
     <SidebarProvider defaultOpen>
@@ -66,7 +76,7 @@ export default function MainLayout() {
       </div>
 
       {/* Mobile Sheet Sidebar */}
-      <Sheet>
+      <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
         <SheetTrigger asChild className="md:hidden fixed top-4 left-4 z-50">
           <Button variant="outline" size="icon">
             <Menu className="h-4 w-4" />
@@ -81,6 +91,7 @@ export default function MainLayout() {
               <NavLink
                 key={item.to}
                 to={item.to}
+                end={item.to === '/'}
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors ${
                     isActive ? 'bg-primary/10 text-primary font-medium' : 'hover:bg-muted'
