@@ -5,6 +5,8 @@ import Medications from '@/pages/Medications'
 import MedicationDetail from '@/pages/MedicationDetail'
 import Visits from '@/pages/Visits'
 import VisitDetail from '@/pages/VisitDetail'
+import Reports from '@/pages/Reports'
+import ReportDetail from '@/pages/ReportDetail'
 
 function App() {
   return (
@@ -17,8 +19,8 @@ function App() {
           <Route path="medications/:id" element={<MedicationDetail />} />
           <Route path="visits" element={<Visits />} />
           <Route path="visits/:id" element={<VisitDetail />} />
-          <Route path="reports" element={<div>体检报告</div>} />
-          <Route path="reports/:id" element={<div>报告详情</div>} />
+          <Route path="reports" element={<Reports />} />
+          <Route path="reports/:id" element={<ReportDetail />} />
           <Route path="symptoms" element={<div>症状日记</div>} />
           <Route path="symptoms/:id" element={<div>症状详情</div>} />
           <Route path="share" element={<div>分享报告</div>} />
