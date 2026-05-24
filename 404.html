@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>健康助手</title>
+  <script>
+    // Redirect all 404s to the main page for SPA routing
+    sessionStorage.redirect = location.href
+    location.replace('/health-assistant/' + location.search + location.hash)
+  </script>
+</head>
+<body>跳转中…</body>
+</html>
