@@ -15,7 +15,7 @@ import Settings from '@/pages/Settings'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/health-assistant">
       <Routes>
         <Route element={<MainLayout />}>
           <Route index element={<Dashboard />} />
